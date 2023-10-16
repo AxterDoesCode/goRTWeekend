@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
+
 
 func main() {
 	//image
@@ -13,6 +15,7 @@ func main() {
 	//Render
 	fmt.Printf("P3\n%v %v\n255\n", imageWidth, imageHeight)
 	for j := 0; j < int(imageWidth); j++ {
+        log.Printf("\nScanlines remaning: %v", int(imageHeight) - j)
 		for i := 0; i < int(imageHeight); i++ {
             r := float64(i) / (imageWidth - 1)
             g := float64(j) / (imageHeight - 1)
