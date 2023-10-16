@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"log"
+
+	"github.com/AxterDoesCode/goRTWeekend/pkg/Color"
+	"github.com/AxterDoesCode/goRTWeekend/pkg/Vec3"
 )
 
 
 func main() {
 	//image
-
     var imageWidth float64 = 256
     var imageHeight float64 = 256
 
@@ -19,14 +21,9 @@ func main() {
 		for i := 0; i < int(imageHeight); i++ {
             r := float64(i) / (imageWidth - 1)
             g := float64(j) / (imageHeight - 1)
-            b := 0
-
-            ir := int(255.999 * float64(r))
-            ig := int(255.999 * float64(g))
-            ib := int(255.999 * float64(b))
-
-            fmt.Printf("%v %v %v\n", ir, ig, ib)
-
+            b := float64(0)
+            pixel_color := color.Color(Vec3.NewVec3WithValues(r,g,b))
+            color.WriteColor(pixel_color)
 		}
 
 	}
