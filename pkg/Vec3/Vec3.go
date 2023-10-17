@@ -82,4 +82,9 @@ func UnitVector(v Vec3) Vec3 {
 	return v.Divide(v.Length())
 }
 
-type Point3 = Vec3
+func WriteColor(pixelColor Vec3) {
+	ir := int(255.999 * pixelColor.X())
+	ig := int(255.999 * pixelColor.Y())
+	ib := int(255.999 * pixelColor.Z())
+	fmt.Printf("%v %v %v\n", ir, ig, ib)
+}
